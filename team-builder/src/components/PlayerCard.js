@@ -17,11 +17,14 @@ export const PlayerCard = (props) => {
 
 const CardContainer = styled.div `
     font-size: 1.6rem;
-    background-color: white;
+    background: rgb(255, 255, 255, .5);
+    
     width: 22vw;
     height: 22rem;
     margin: 1%;
     padding: 1%;
     border-radius: .5rem;
+    overflow-y: auto;
+    
     
 `
