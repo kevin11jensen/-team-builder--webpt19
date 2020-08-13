@@ -7,7 +7,8 @@ export const PlayerCard = (props) => {
     return (
         <CardContainer>
             <h3>{props.playerCard[0].name}</h3>
-            <h4>#: {props.playerCard[0].number}</h4>
+            <h5>Team: {props.playerCard[0].team}</h5>
+            <h5>Jersey #: {props.playerCard[0].number}</h5>
             <h5>Pos: {props.playerCard[0].position}</h5>
             <p>Scouting Report: {props.playerCard[0].scouting}</p>
         </CardContainer>
@@ -22,7 +23,5 @@ const CardContainer = styled.div `
     margin: 1%;
     padding: 1%;
     border-radius: .5rem;
-    h1 {
-        color: black;
-    }
+    
 `

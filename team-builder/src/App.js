@@ -9,6 +9,7 @@ function App() {
   const [playerCard, setPlayerCard] = useState([
     {
       name: 'Damian Lillard',
+      team: 'Blazers',
       number: '0',
       position: 'PG',
       scouting: 'GOAT'

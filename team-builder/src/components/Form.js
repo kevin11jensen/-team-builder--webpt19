@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import styled from 'styled-components'
 
 export default function Form() {
-    const [state, setState] = useState({ name: '', number: '', position: '', scouting: '' })
+    const [state, setState] = useState({ name: '', team: '', number: '', position: '', scouting: '' })
     const handleChange = e => {
         setState({...state, [e.target.name]: e.target.value})
     }
     const handleSubmit = e => {
         e.preventDefault()
         console.log(state.name)
+        console.log(state.team)
         console.log(state.number)
         console.log(state.position)
         console.log(state.scouting)
@@ -27,6 +28,16 @@ export default function Form() {
                     value = {state.name}
                     onChange = {e => handleChange(e)}
                     placeholder = 'player name'
+                    required
+                    />
+                </label>
+                <label htmlFor = 'team'>
+                    <input
+                    name = 'team'
+                    id = 'team'
+                    value = {state.team}
+                    onChange = {e => handleChange(e)}
+                    placeholder = 'player team'
                     required
                     />
                 </label>
