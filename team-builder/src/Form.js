@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import styled from 'styled-components'
 
 export default function Form() {
     const [state, setState] = useState({ name: '', number: '', position: '', scouting: '' })
@@ -15,58 +15,76 @@ export default function Form() {
     }
     {console.log(state)}
     return (
-        
-        <form
+        <FormContainer>
+            <form
             onSubmit = {e => handleSubmit(e)}
-            
-        >
-            <label htmlFor = 'name'>
-                <input
-                name = 'name'
-                id = 'name'
-                value = {state.name}
+                
+            >
+                <label htmlFor = 'name'>
+                    <input
+                    name = 'name'
+                    id = 'name'
+                    value = {state.name}
+                    onChange = {e => handleChange(e)}
+                    placeholder = 'player name'
+                    required
+                    />
+                </label>
+                <label htmlFor = 'number'>
+                    <input
+                    name = 'number'
+                    id = 'number'
+                    value = {state.number}
+                    onChange = {e => handleChange(e)}
+                    placeholder = 'player number'
+                    required
+                    />
+                </label>
+                <label htmlFor = 'position'>
+                    <select
+                    name = 'position'
+                    id = 'position'
+                    value = {state.position}
+                    onChange = {e => handleChange(e)}
+                    required
+                    >
+                        <option value = 'PG'>PG</option>
+                        <option value = 'SG'>SG</option>
+                        <option value = 'SF'>SF</option>
+                        <option value = 'PF'>PF</option>
+                        <option value = 'C'>C</option>
+                    </select>
+                </label>
+                <textarea
+                name = 'scouting'
+                placeholder = 'player scouting'
+                cols = '29'
+                rows = '9'
+                maxLength = '250'
+                value = {state.scouting}
                 onChange = {e => handleChange(e)}
-                placeholder = 'player name'
-                required
                 />
-            </label>
-            <label htmlFor = 'number'>
-                <input
-                name = 'number'
-                id = 'number'
-                value = {state.number}
-                onChange = {e => handleChange(e)}
-                placeholder = 'player number'
-                required
-                />
-            </label>
-            <label htmlFor = 'position'>
-                <select
-                name = 'position'
-                id = 'position'
-                value = {state.position}
-                onChange = {e => handleChange(e)}
-                required
-                >
-                    <option value = 'PG'>PG</option>
-                    <option value = 'SG'>SG</option>
-                    <option value = 'SF'>SF</option>
-                    <option value = 'PF'>PF</option>
-                    <option value = 'C'>C</option>
-                </select>
-            </label>
-            <textarea
-            name = 'scouting'
-            placeholder = 'player scouting'
-            cols = '29'
-            rows = '9'
-            maxLength = '250'
-            value = {state.scouting}
-            onChange = {e => handleChange(e)}
-            />
-            <button type = 'submit'>Submit</button>
-        </form>
+                <button type = 'submit'>Submit</button>
+            </form>
+        </FormContainer>
     );
 }
 
+const FormContainer = styled.div `
 
+    form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 3%;
+        label {
+            margin: 1%;
+            input {
+                padding: 3%;
+            }
+            select {
+                padding: 1%;
+            }
+        }
+    }
+`
