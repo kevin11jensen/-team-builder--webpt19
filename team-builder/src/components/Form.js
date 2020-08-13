@@ -98,7 +98,7 @@ const FormContainer = styled.div `
         button {
             background: transparent;
             color: white;
-            padding: 2% 5%;
+            padding: 2rem 5rem;
             border: 2px solid white;
             margin-top: 2%;
             font-size: 1.6rem;

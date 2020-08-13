@@ -1,16 +1,26 @@
-import React from 'react';
-import Form from './Form'
+import React, { useState } from 'react';
+import Form from './components/Form'
+import { PlayerCard } from './components/PlayerCard'
 import styled from 'styled-components'
 import nba from './images/nba.png'
 import './App.css';
 
 function App() {
-  
+  const [playerCard, setPlayerCard] = useState([
+    {
+      name: 'Damian Lillard',
+      number: '0',
+      position: 'PG',
+      scouting: 'GOAT'
+    }
+  ])
+
   return (
     <MainContainer>
-      <div className="App">
+      
         <Form />
-      </div>
+        <PlayerCard playerCard = {playerCard} />
+      
     </MainContainer>
   );
 }
@@ -23,4 +33,9 @@ const MainContainer = styled.div `
   background-position: center;
   background-size: cover;
   height: 100vh;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-between;
+
+  
 `
