@@ -1,20 +1,28 @@
 import React, { useState } from 'react';
 import styled from 'styled-components'
 
-export default function Form() {
-    const [state, setState] = useState({ name: '', team: '', number: '', position: '', scouting: '' })
+export default function Form(props) {
+    const [state, setState] = useState({ 
+        id: Date.now(),
+        name: '', 
+        team: '', 
+        number: '', 
+        position: '', 
+        scouting: '' 
+    })
+
     const handleChange = e => {
         setState({...state, [e.target.name]: e.target.value})
     }
+
     const handleSubmit = e => {
         e.preventDefault()
-        console.log(state.name)
-        console.log(state.team)
-        console.log(state.number)
-        console.log(state.position)
-        console.log(state.scouting)
+        props.addPlayer(state)
+        setState({name: '', team: '', number: '', position: 'PG', scouting: '', id: Date.now()})
     }
+
     {console.log(state)}
+
     return (
         <FormContainer>
             <form

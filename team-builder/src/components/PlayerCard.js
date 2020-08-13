@@ -6,11 +6,11 @@ export const PlayerCard = (props) => {
     console.log('playerCard props:', props)
     return (
         <CardContainer>
-            <h3>{props.playerCard[0].name}</h3>
-            <h5>Team: {props.playerCard[0].team}</h5>
-            <h5>Jersey #: {props.playerCard[0].number}</h5>
-            <h5>Pos: {props.playerCard[0].position}</h5>
-            <p>Scouting Report: {props.playerCard[0].scouting}</p>
+            <h3>{props.playerCard.name}</h3>
+            <h5>Team: {props.playerCard.team}</h5>
+            <h5>Jersey #: {props.playerCard.number}</h5>
+            <h5>Pos: {props.playerCard.position}</h5>
+            <p>Scouting Report: {props.playerCard.scouting}</p>
         </CardContainer>
     )
 }

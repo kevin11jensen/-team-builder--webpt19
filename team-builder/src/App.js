@@ -15,11 +15,13 @@ function App() {
       scouting: 'GOAT'
     }
   ])
-
+  const addPlayer = (newPlayer) => {
+    setPlayerCard([...playerCard, newPlayer])
+  }
   return (
     <MainContainer>
       
-        <Form />
+        <Form addPlayer = {addPlayer}/>
         <PlayerCard playerCard = {playerCard} />
       
     </MainContainer>
