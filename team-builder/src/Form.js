@@ -1,22 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 
 export default function Form() {
-    
+    const [state, setState] = useState({ name: '', number: '', position: '', scouting: '' })
+    const handleChange = e => {
+        setState({...state, [e.target.name]: e.target.value})
+    }
+    const handleSubmit = e => {
+        e.preventDefault()
+        console.log(state.name)
+        console.log(state.number)
+        console.log(state.position)
+        console.log(state.scouting)
+    }
     return (
-        <form>
-            <input
-            placeholder = 'player name'
+        // {console.log(state)}
+        <form
+            onSubmit = {e => handleSubmit(e)}
+        >
+            <label htmlFor = 'name'>
+                <input
+                name = 'name'
+                id = 'name'
+                value = {state.name}
+                onChange = {e => handleChange(e)}
+                placeholder = 'player name'
+                />
+            </label>
+            <label htmlFor = 'number'>
+                <input
+                name = 'number'
+                id = 'number'
+                value = {state.number}
+                onChange = {e => handleChange(e)}
+                placeholder = 'player number'
+                />
+            </label>
+            <label htmlFor = 'position'>
+                <select
+                name = 'position'
+                id = 'position'
+                value = {state.position}
+                onChange = {e => handleChange(e)}
+                >
+                    <option value = 'PG'>PG</option>
+                    <option value = 'SG'>SG</option>
+                    <option value = 'SF'>SF</option>
+                    <option value = 'PF'>PF</option>
+                    <option value = 'C'>C</option>
+                </select>
+            </label>
+            <textarea
+            name = 'scouting'
+            placeholder = 'player scouting'
+            cols = '29'
+            rows = '9'
+            maxLength = '250'
+            value = {state.scouting}
+            onChange = {e => handleChange(e)}
             />
-            <input
-            placeholder = 'player number'
-            />
-            <input
-            placeholder = 'player position'
-            />
-            <input
-            placeholder = 'player team'
-            />
+            <button type = 'submit'>Submit</button>
         </form>
     );
 }
