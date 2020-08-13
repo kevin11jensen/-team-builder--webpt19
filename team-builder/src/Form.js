@@ -75,15 +75,37 @@ const FormContainer = styled.div `
     form {
         display: flex;
         flex-direction: column;
-        align-items: center;
-        margin: 3%;
+        align-items: flex-start;
+        margin: 0 3%;
         label {
-            margin: 1%;
+            margin: 1% 0;
             input {
                 padding: 3%;
+                font-size: 1.4rem;
+                border-radius: .5rem;
             }
             select {
                 padding: 1%;
+                font-size: 1.6rem;
+                border-radius: .5rem;
+            }
+        }
+        textarea{
+            font-size: 1rem;
+            padding: 1%;
+            border-radius: .5rem;
+        }
+        button {
+            background: transparent;
+            color: white;
+            padding: 2% 5%;
+            border: 2px solid white;
+            margin-top: 2%;
+            font-size: 1.6rem;
+            transition: .5s;
+            &:hover {
+                background: rgb(255, 255, 255, .5);
+                cursor: pointer;
             }
         }
     }
