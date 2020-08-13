@@ -13,10 +13,12 @@ export default function Form() {
         console.log(state.position)
         console.log(state.scouting)
     }
+    {console.log(state)}
     return (
-        // {console.log(state)}
+        
         <form
             onSubmit = {e => handleSubmit(e)}
+            
         >
             <label htmlFor = 'name'>
                 <input
@@ -25,6 +27,7 @@ export default function Form() {
                 value = {state.name}
                 onChange = {e => handleChange(e)}
                 placeholder = 'player name'
+                required
                 />
             </label>
             <label htmlFor = 'number'>
@@ -34,6 +37,7 @@ export default function Form() {
                 value = {state.number}
                 onChange = {e => handleChange(e)}
                 placeholder = 'player number'
+                required
                 />
             </label>
             <label htmlFor = 'position'>
@@ -42,6 +46,7 @@ export default function Form() {
                 id = 'position'
                 value = {state.position}
                 onChange = {e => handleChange(e)}
+                required
                 >
                     <option value = 'PG'>PG</option>
                     <option value = 'SG'>SG</option>
